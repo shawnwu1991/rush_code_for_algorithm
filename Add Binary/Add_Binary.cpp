@@ -22,15 +22,18 @@ class Solution {
 	    iterNum = aNum;
 	else
 	    iterNum = bNum;
+
+	aNum -= 1;
+	bNum -= 1;
 	
 	while (iterNum >= 0) {
-	    if ((a.at(aNum) == b.at(bNum)) && (0 == a.at(aNum))) {
+	    if ((a.at(aNum) == b.at(bNum)) && ('0' == a.at(aNum))) {
 	    	tempChar = '0';
 		if (true == isCarry) {
 		    tempChar = '1';
 		    isCarry = false;
 		}
-	    }else if ((a.at(aNum) == b.at(bNum)) && (1 == a.at(aNum))) {
+	    }else if ((a.at(aNum) == b.at(bNum)) && ('1' == a.at(aNum))) {
 	    	if (true == isCarry)
 		    tempChar = '1';
 		else
@@ -43,7 +46,7 @@ class Solution {
 		}else
 		    tempChar = '1';
 	    }
-	    reverseResult.push_back(temp);
+	    reverseResult.push_back(tempChar);
 	    iterNum--;
 	    aNum--;
 	    bNum--;
@@ -60,22 +63,22 @@ class Solution {
 	    int i = 0;
 	    if (a.size() <= b.size()) {
 	    	iterNum = b.size() - a.size();
-		if (b.size(0) == '1')
+		if (b.at(0) == '1')
 		    result.push_back('1');
 		
 		while (i < iterNum) {
-		    if (b.at(i) == 0)
+		    if (b.at(i) == '0')
 		    	result.push_back('1');
 		    else
 		    	result.push_back('0');
 		}
 	    }else {
 	    	iterNum = a.size() - b.size();
-		if (a.size(0) == '1')
+		if (a.at(0) == '1')
 		    result.push_back('1');
 		
 		while (i < iterNum) {
-		    if (a.at(i) == 0)
+		    if (a.at(i) == '0')
 		    	result.push_back('1');
 		    else
 		    	result.push_back('0');
