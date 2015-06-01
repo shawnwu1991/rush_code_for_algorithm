@@ -26,7 +26,13 @@ public:
 	    nums.erase(it);
 	    it = find(nums.begin(), nums.end(), temp.at(0));
 	    if (it != nums.end()) {
-	    	
+	    	nums.erase(it);
+		it = nums.begin();
+	    	while (it != num.end()) {
+		    if (nums.at(it))
+		    	nums.erase(it);
+		return false;
+		}
 	    }else 
 	    	return true;
 	}else 
