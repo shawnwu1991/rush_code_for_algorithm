@@ -5,11 +5,11 @@ using namespace std;
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
-        int temp;
+        reverse(nums.begin(), nums.end());
         for (size_t i = 0; i < k; ++i) {
-            temp = nums.back();
-            nums.insert(nums.begin(), temp);
-            nums.pop_back();
+            nums.push_back(nums.begin());
+            nums.erase(nums.begin());
         }
+        reverse(nums.begin(), nums.end());
     }
 };
