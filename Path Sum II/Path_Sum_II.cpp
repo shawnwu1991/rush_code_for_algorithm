@@ -15,6 +15,8 @@ using namespace std;
 class Solution {
 public:
     vector<vector<int>> pathSum(TreeNode* root, int sum) {
+        vector<vector<int>> result(0);
+        if (NULL == root) return result;
         return ;
     }
 };
