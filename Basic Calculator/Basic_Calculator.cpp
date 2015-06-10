@@ -5,7 +5,8 @@ using namespace std;
 class Solution {
 public:
     int calculate(string s) {
-        stack<int> calculator;
+        stack<char> operations;
+        stack<int> nums;
         int temp;
         for (size_t i = 0; i < s.size(); ++i) {
             if (' ' == s[i]) continue;
@@ -22,17 +23,5 @@ public:
 
 
         return result;
-    }
-
-    stack<int> getFormulation(string s) {
-        stack<int> tempForm;
-        for (size_t i = 0; i < s.size(); ++i) {
-            if ('' == s[i]) continue;
-
-            if ('+' == s[i] || '-' == s[i]) {
-
-            }else
-                tempForm.push_back(s[i]);
-        }
     }
 };
