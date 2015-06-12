@@ -15,17 +15,10 @@ class Solution {
 public:
     int countNodes(TreeNode* root) {
         if (NULL == root) return 0;
-        TreeNode* tempRoot = root;
-        int level = 0;
-        while (true) {
-            if (tempRoot->left) {
-                tempRoot = tempRoot->right;
-                if (tempRoot) {
-                    level += 1;
-                    continue;
-                }
-            return ;
-            }
-        }
+        int result = 1;
+        if (root->left)  result += countNodes(root->left);
+        if (root->right) result += countNodes(root->right);
+
+        return result;
     }
 };
