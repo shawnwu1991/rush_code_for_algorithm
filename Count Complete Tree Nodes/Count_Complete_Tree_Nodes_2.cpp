@@ -29,7 +29,7 @@ public:
               rightRoot = rightRoot->right;
          }
 
-         if (leftRoot == rightRoot) return (pow(2, leftRoot) - 1);
+         if (leftHeight == rightHeight) return (pow(2, leftHeight) - 1);
 
          return (1 + countNodes(root->left) + countNodes(root->right));
     }
