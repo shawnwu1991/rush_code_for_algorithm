@@ -14,7 +14,18 @@ using namespace std;
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
+        if (!root) return root;
+        TreeNode*& tempRoot = root;
+        invertSubTree(tempRoot);
+        return tempRoot;
+    }
 
-        return ;
+    void invertSubTree(TreeNode *&root) {
+        if ((!root->left) && (!root->right)) return ;
+        TreeNode*& temp = root->right;
+        root->right = root->left;
+        root->left = temp;
+        invertSubTree(root->left);
+        invertSubTree(root->right);
     }
 };
