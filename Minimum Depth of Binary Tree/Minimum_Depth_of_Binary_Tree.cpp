@@ -15,6 +15,14 @@ using namespace std;
 class Solution {
 public:
     int minDepth(TreeNode* root) {
-        return ;
+        if (!root) return 0;
+        int lHeight = minDepth(root->left);
+        int rHeight = minDepth(root->right);
+        if (((lHeight >= rHeight) && ( rHeight)) ||
+            ((lHeight <  rHeight) && (!lHeight)))
+            return 1 + rHeight;
+        else if (((lHeight >= rHeight) && (!rHeight)) ||
+                 ((lHeight <  rHeight) && ( lHeight)))
+            return 1 + lHeight;
     }
 };
