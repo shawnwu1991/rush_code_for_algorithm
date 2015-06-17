@@ -10,7 +10,7 @@ public:
 
 	while (1 < n) {
 	    if (1 == n % 2) counter++;
-	    n = n >> 2;
+	    n = n >> 1;
 	}
 	counter++;
     	return counter;
