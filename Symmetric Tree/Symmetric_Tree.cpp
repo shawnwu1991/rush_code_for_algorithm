@@ -14,7 +14,17 @@ using namespace std;
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
+        if (!root) return false;
 
-         return false;
+        vector<TreeNode*> levelNodes;
+        levelNodes.push_back(root);
+        while (1) {
+             int len = levelNodes.length();
+             while (len > 0) {
+
+             }
+
+        }
+        return false;
     }
 };
