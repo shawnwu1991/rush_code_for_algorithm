@@ -17,6 +17,10 @@ public:
             if (!temp) continue;
             result.push_back(temp - MARGIN);
         }
-        return flag ? -atoi(result) : atoi(result);
+
+        if (((result[0] + MARGIN) * result.length()) > MAX_VALUE)
+            return 0;
+        else
+            return flag ? -atoi(result) : atoi(result);
     }
 };
