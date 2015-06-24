@@ -6,7 +6,7 @@ class Solution {
 public:
     int myAtoi(string str) {
         if (!str.length()) return 0;
-        int result = 0;
+        long long result = 0;
         bool nonNeg = true;
         for (int i = 0; i < str.length(); ++i) {
             switch (str[i]) {
@@ -38,6 +38,9 @@ public:
             }
 
         }
-        return result;
+        result = nonNeg? result: (*= (-1));
+        if (result > INT_MAX) return INT_MAX;
+        else if (result < INT_MIN) return INT_MIN;
+        else return result;
     }
 };
