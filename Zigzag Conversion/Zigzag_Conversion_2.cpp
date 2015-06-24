@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
 public:
     string convert(string s, int numRows) {
-        if (1 == numRows || (!s.length())) return s;
+        if (1 == numRows || (!s.length()) || (s.length() <= numRows)) return s;
         string result;
         int offsetLen = 2 * numRows - 2;
 
