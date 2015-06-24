@@ -38,7 +38,7 @@ public:
             }
 
         }
-        result = nonNeg? result: (*= (-1));
+        result = nonNeg? result: *= (-1);
         if (result > INT_MAX) return INT_MAX;
         else if (result < INT_MIN) return INT_MIN;
         else return result;
