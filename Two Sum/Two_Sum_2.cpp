@@ -15,7 +15,7 @@ public:
             if (mapping.find(leaveNum) != nums.end()) {
                  result.push_back(i + 1);
                  result.push_back(mapping[leaveNum] + 1);
-                 break;
+                 return result;
             }
         }
         return result;
