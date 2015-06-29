@@ -15,7 +15,7 @@ public:
 
         int val = carry + (l1? l1->val: 0) + (l2? l2->val: 0);
         ListNode* currentNode = new ListNode(val % 10);
-        currentNode->next = addList(l1? l1->val: NULL, l2? l2->val: NULL, val / 10);
+        currentNode->next = addTwoLists(l1? l1->next: NULL, l2? l2->next: NULL, val / 10);
         return currentNode;
     }
 };
