@@ -15,9 +15,9 @@ class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
          if (!head || !head->next) return head;
-         ListNode *tempHead = head, *newHead = head->next;
+         ListNode *tempHead = head, *newHead = head->next, *tailHead = swapPairs(head->next->next);
          newHead->next = tempHead;
-         tempHead->next = swapPairs(head->next->next);
+         tempHead->next = tailHead;
          return newHead;
     }
 };
