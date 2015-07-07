@@ -9,7 +9,7 @@ public:
         sort(nums.begin(), nums.end());
         vector<vector<int>> result(0);
 
-        for (int i = 0; i < nums.size(); ++i) {
+        for (int i = 0; i < nums.size() - 2; ++i) {
             if (((i - 1) >= 0) && (nums[i] == nums[i - 1])) continue;
             int start = i + 1;
             int end = nums.size() - 1;
