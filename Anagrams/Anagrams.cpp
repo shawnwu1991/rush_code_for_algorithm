@@ -5,6 +5,9 @@ using namespace std;
 class Solution {
 public:
     vector<string> anagrams(vector<string>& strs) {
-        return ;
+        if (strs.size() <= 1) return strs;
+        vector<string> result(0);
+
+        return result;
     }
 };
