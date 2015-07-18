@@ -13,6 +13,20 @@ using namespace std;
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
-        return ;
+        if (k < 1 || !head || !head->next) return head;
+        ListNode* tempH = temp  = head;
+        int counter = 0;
+        while (!tempH) {
+            tempH = tempH->next;
+            counter++;
+        }
+        tempH = head;
+        k = k % counter;
+        counter = counter - k;
+        while (!counter) {tempH = tempH->next; }
+        head = tempH;
+        while (!tempH) {tempH = tempH->next; }
+        tempH->next = temp;
+        return head;
     }
 }
